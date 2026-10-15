@@ -1,0 +1,159 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ocultar elementos visualmente manteniendo accesibilidad para lectores de pantalla */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1e293b;
+    color: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 16px; /* Tamaño base */
+    transition: font-size 0.2s ease;
+}
+
+.header {
+    text-align: center;
+    padding: 15px 20px;
+    background-color: #0f172a;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header h1 {
+    margin-bottom: 12px;
+    font-size: 1.8rem;
+    color: #38bdf8;
+}
+
+/* Barra de controles */
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn {
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.2s, transform 0.1s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:hover {
+    background-color: #1d4ed8;
+}
+
+.btn:focus-visible {
+    outline: 3px solid #f59e0b;
+}
+
+.btn-secondary {
+    background-color: #dc2626;
+}
+
+.btn-secondary:hover {
+    background-color: #b91c1c;
+}
+
+.font-controls, .nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#page-indicator {
+    font-weight: bold;
+    padding: 0 8px;
+    color: #e2e8f0;
+}
+
+#loading {
+    margin-top: 10px;
+    color: #f59e0b;
+    font-weight: bold;
+}
+
+/* Contenedor del libro */
+.book-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.flip-book {
+    display: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.page {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page canvas {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Declaratoria IAG al final */
+.iag-declaration {
+    width: 100%;
+    background-color: #0f172a;
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid #334155;
+    margin-top: auto;
+}
+
+.iag-declaration h3 {
+    color: #38bdf8;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.iag-declaration p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 0.95rem;
+    color: #94a3b8;
+    line-height: 1.5;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visor Accesible - El reloj y la nube</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- PDF.js para procesar el PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <!-- PageFlip para efecto de pasar página -->
+    <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
+</head>
+<body>
+    <!-- Lector de pantalla (Anuncio accesible directo para TTS/lectores de voz) -->
+    <div id="sr-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+    <header class="header">
+        <h1>El Reloj y la Nube</h1>
+        
+        <!-- Barra de herramientas accesible -->
+        <nav class="toolbar" aria-label="Controles de lectura y accesibilidad">
+            <!-- Botones para lectura en voz alta (Accesibilidad/Baja Visión) -->
+            <button id="btn-read" class="btn" aria-label="Leer página actual en voz alta">🔊 Leer Voz Alta</button>
+            <button id="btn-stop" class="btn btn-secondary" aria-label="Detener lectura de voz">⏹️ Detener Voz</button>
+
+            <!-- Botones de tamaño de texto -->
+            <div class="font-controls" role="group" aria-label="Controles de tamaño de texto">
+                <button id="btn-zoom-in" class="btn" aria-label="Agrandar tamaño de texto">A+</button>
+                <button id="btn-zoom-out" class="btn" aria-label="Achicar tamaño de texto">A-</button>
+            </div>
+
+            <!-- Botones de navegación -->
+            <div class="nav-controls" role="group" aria-label="Navegación de páginas">
+                <button id="btn-prev" class="btn" aria-label="Página anterior">◀ Anterior</button>
+                <span id="page-indicator" aria-live="polite">Página 1</span>
+                <button id="btn-next" class="btn" aria-label="Página siguiente">Siguiente ▶</button>
+            </div>
+        </nav>
+
+        <div id="loading" role="status">Cargando cuento...</div>
+    </header>
+
+    <main class="book-container">
+        <!-- Flipbook responsivo -->
+        <div id="flip-book" class="flip-book" role="region" aria-label="Libro interactivo"></div>
+    </main>
+
+    <!-- Declaratoria de Uso de Inteligencia Artificial Generativa (IAG) -->
+    <footer class="iag-declaration">
+        <h3>Declaratoria de Uso de Inteligencia Artificial Generativa (IAG)</h3>
+        <p>
+            Este proyecto y sus ilustraciones/contenidos adaptados han sido desarrollados con el soporte de herramientas de Inteligencia Artificial Generativa (IAG) para optimizar la experiencia de aprendizaje, accesibilidad y diseño interactivo.
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
